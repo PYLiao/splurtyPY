@@ -6,7 +6,7 @@ class QuoteTest < ActiveSupport::TestCase
   # end
 
   test "unique_tag" do
-  	quote = Quote.create(:author => "Bonga Saluda", :saying => "You are so handsome")
+  	quote = FactoryGirl.create(:quote, :author => "Bonga Saluda")
   	expected = "BS#" + quote.id.to_s
   	actual = quote.unique_tag
   	#trigger "unique_tag" method on the test record of the database.

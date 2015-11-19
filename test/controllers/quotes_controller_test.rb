@@ -6,7 +6,7 @@ class QuotesControllerTest < ActionController::TestCase
   # end
 
   test "quote show page" do
-  	quote = Quote.create(:author => 'Bonga Liao', :saying => 'Say hallo to you.')
+  	quote = FactoryGirl.create(:quote)
   	get :show, :id => quote.id
   	assert_response :success
   end
