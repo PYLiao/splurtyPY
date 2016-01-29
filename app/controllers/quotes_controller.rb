@@ -16,9 +16,9 @@ class QuotesController < ApplicationController
 	end
 
 	def show
-		@quote = Quote.where(:id => params[:id]).first
+		@quote = Quote.where(id: params[:id]).first
 		if @quote.blank?
-			render :text => "Not Found", :status => :not_found
+			render text: "No Found", status: :not_found
 		end
 	end
 
@@ -28,5 +28,5 @@ class QuotesController < ApplicationController
 		params.require(:quote).permit(:saying, :author)
 	end
 
-	
+
 end
